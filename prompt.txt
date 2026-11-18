@@ -1,0 +1,190 @@
+PROMPT.TXT — paste-ready prompts for Antigravity
+==================================================
+Setup: create a new empty repo/folder, put masterplan.md, design.md, content.txt,
+and this file's prompts in the root, then open the folder in Antigravity.
+Antigravity's agent reads files in your workspace, so keep all three spec files
+in root — every phase prompt below references them directly.
+
+Build in phases (recommended) rather than firing the ONE-SHOT prompt. Antigravity's
+agent does noticeably better work on a scoped task it can verify than on one huge
+task — and you get to check each phase in the browser before moving on. Paste one
+phase, let it finish and verify, review the result, then paste the next.
+
+
+================================================================================
+ONE-SHOT PROMPT (use only if you want a fast first pass to react to)
+================================================================================
+
+Read masterplan.md, design.md, and content.txt in this repo fully before writing
+any code. Build the single-page React + Tailwind portfolio they describe: a
+Vite + React 18 + Tailwind CSS site with a procedurally-built 3D circuit board
+hero (React Three Fiber + drei + postprocessing bloom), Lenis smooth scroll,
+GSAP ScrollTrigger section choreography, and the custom SVG icon set described
+in design.md. Follow the token system in design.md exactly for color, type, and
+spacing — do not substitute your own defaults. Use the real copy from
+content.txt, leaving [BRACKETED] placeholders exactly as placeholders. Implement
+the mobile fallback for the 3D scene and the prefers-reduced-motion fallback for
+all animation, as specified in masterplan.md §5 and §7. When done, open it in
+the browser, click through every section, resize to mobile width, and fix
+anything that's broken or off-spec before telling me it's done.
+
+
+================================================================================
+PHASE 0 — Project setup
+================================================================================
+
+Set up a new Vite + React 18 project with Tailwind CSS 3 configured. Install
+these dependencies: @react-three/fiber, @react-three/drei,
+@react-three/postprocessing, three, gsap, lenis, framer-motion (import as
+"motion/react"). Create the folder structure exactly as laid out in
+masterplan.md §8. Set up font loading for Cabinet Grotesk, JetBrains Mono, and
+General Sans as described in design.md — self-hosted or via their respective
+CDNs, with font-display: swap. Add the color and spacing tokens from design.md
+into tailwind.config.js as custom theme values (don't leave them as inline hex
+codes scattered through components — wire them into the Tailwind theme so
+they're reusable).
+
+Acceptance check: `npm run dev` boots cleanly, Tailwind classes using the new
+custom colors/fonts work, no console errors.
+
+
+================================================================================
+PHASE 1 — Skeleton & layout
+================================================================================
+
+Build every section from the site map in masterplan.md §3 (#root, #process,
+#modules, #deployed, #runtime if applicable, #uplink) plus the sticky nav and
+footer, using placeholder/lorem content for now — don't wire real copy yet,
+that's Phase 5. Follow the layout concept and ASCII wireframe in design.md
+exactly: single column, max-width 1200px, the vertical trace-line placeholder
+running down the page connecting sections. Make it fully responsive at 375 /
+768 / 1024 / 1440 / 1920px per masterplan.md §7. No animation yet — this phase
+is structure only.
+
+Acceptance check: every section is present and in the right order, the layout
+holds up at all five breakpoints with no overflow or broken wrapping, nav links
+scroll to the correct section.
+
+
+================================================================================
+PHASE 2 — Design system pass
+================================================================================
+
+Now apply design.md in full: correct type scale and weights for Display XL/L/M,
+Body L/M, and Mono S as specified, correct spacing rhythm (128px desktop /
+64px mobile section padding), 6px radius on small elements and 16px on large
+panels, the glow-based elevation treatment (not drop shadows) on interactive
+elements, and 1px Panel Line borders that brighten to Ember Copper on hover.
+Build the custom SVG icon set described in design.md's Illustration Style
+Guide — single-weight stroke, rounded joints, solder-dot endpoints, default
+Panel Line / hover Ember Copper — do not substitute a stock icon library like
+Feather or Lucide for these.
+
+Acceptance check: take a screenshot of each section and compare it against the
+token system and wireframe in design.md — flag and fix anything that reads as
+a generic Tailwind default rather than this specific system (wrong radius,
+wrong font pairing, drop shadows instead of glow, etc.).
+
+
+================================================================================
+PHASE 3 — 3D signature element
+================================================================================
+
+Build the hero's 3D circuit board exactly as specified in masterplan.md §5:
+procedurally generated (no external .glb required) using Three.js primitives —
+a dark board substrate, emissive tube/line traces branching from a central
+bright "CPU" element, a scattering of small component meshes for texture, one
+key light plus emissive materials, and a bloom postprocessing pass tuned to
+Ember Copper. Camera has a slow idle drift (no OrbitControls, this isn't user-
+steerable) plus a small parallax offset driven by pointer position. Lazy-load
+the whole canvas with React.lazy + Suspense so it never blocks first paint.
+Implement the mobile fallback from masterplan.md §5: below 768px, swap the
+live canvas for a static image or simplified SVG version instead of rendering
+the full scene.
+
+Acceptance check: open the browser, confirm the board renders with no console
+errors or dropped frames on idle, confirm it does NOT render the full WebGL
+scene at a 375px viewport (check the fallback shows instead), confirm
+prefers-reduced-motion stops the idle drift.
+
+
+================================================================================
+PHASE 4 — Scroll choreography
+================================================================================
+
+Wire up Lenis for global smooth scroll and sync GSAP ScrollTrigger to it per
+the standard Lenis+GSAP integration. Implement the scroll-scrubbed trace line
+running through the page (stroke-dashoffset tied to scroll progress) as
+described in design.md's layout concept. Build each section's reveal timeline
+per design.md's Motion Principles: translateY 24px → 0 with opacity, expo-out
+easing, 500-800ms, triggered around "top 75%." Implement the hero's one-time
+trace-ignition sequence (traces light up from the CPU outward in a 150-250ms
+stagger) triggered on first scroll past the hero, settling into a slow idle
+glow afterward. Do not add scroll-linked animation to anything not listed in
+design.md's Motion Principles — specifically, do not animate body paragraph
+text word-by-word or letter-by-letter.
+
+Acceptance check: scroll through the full page and confirm the trace line
+draws smoothly and in sync with scroll position, each section reveals once
+and doesn't re-trigger oddly on scroll-up, and confirm the reduced-motion
+fallback (instant state changes instead of animated ones) works via browser
+dev tools' emulate-css-media-feature option.
+
+
+================================================================================
+PHASE 5 — Content integration
+================================================================================
+
+Replace all placeholder content with the real copy from content.txt, section
+by section, preserving [BRACKETED] placeholders exactly where content.txt
+still has them (do not invent fake project names, links, or stats to fill
+them — leave the brackets for me to fill in). Build the project cards for
+#deployed with the 3D-tilt-on-hover interaction from design.md (CSS transform
++ Framer Motion, max 6°, mouse-position-driven — not a separate R3F scene per
+card). Wire the contact form to [Formspree/EmailJS — pick one and tell me
+which env vars you need]. Add the magnetic-pull hover behavior to primary CTA
+buttons and the custom cursor described in design.md, disabled on touch
+devices via the (hover: none) media query.
+
+Acceptance check: every section shows real copy from content.txt, no lorem
+ipsum remains, placeholders are still visibly marked as placeholders, project
+cards tilt correctly on hover and reset smoothly on mouse-leave, the contact
+form shows a loading state on submit per content.txt's micro-copy.
+
+
+================================================================================
+PHASE 6 — Polish & QA
+================================================================================
+
+Do a full pass: verify color contrast of Bone/Signal Slate text against the
+Void background meets WCAG AA, verify every interactive element has a visible
+on-theme focus ring (2px Ember Copper, 2px offset — not outline:none), verify
+keyboard-only navigation can reach and activate every link/button/form field
+in a sensible order, and confirm touch targets are at least 44×44px on mobile
+regardless of visual size. Run through the site at each breakpoint again after
+all the animation and content work. Check the browser console for errors or
+warnings across the whole scroll journey. Then give me a short summary of
+anything in masterplan.md or design.md you weren't able to fully implement and
+why, so I know what to revisit.
+
+Acceptance check: no console errors anywhere on the page, Lighthouse
+Performance roughly in the 85+ desktop / 70+ mobile range per masterplan.md
+§7, reduced-motion and mobile-3D-fallback both confirmed working one more
+time end to end.
+
+
+================================================================================
+NOTES FOR WORKING WITH ANTIGRAVITY
+================================================================================
+
+- After each phase, use Antigravity's browser agent to actually click through
+  what it built rather than trusting the diff alone — ask it directly: "open
+  this in the browser and check for console errors and broken layout at
+  mobile width" — it can do this itself.
+- Leave comments on its Artifacts when something's off-spec instead of
+  re-typing the whole phase prompt — point at the specific element and say
+  what's wrong against design.md.
+- If a phase comes back visually generic (default shadows, default font
+  pairing, rounded-pill buttons, etc.), that's the signal to re-prompt with:
+  "this doesn't match design.md's token system — re-check §Color and §Type
+  and fix X specifically," rather than accepting it and moving on.

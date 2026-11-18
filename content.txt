@@ -1,0 +1,217 @@
+CONTENT — Karan Dugad Portfolio
+================================
+This is the copy source of truth. Feed this file to Antigravity alongside masterplan.md
+and design.md. Anything in [BRACKETS] is a placeholder — replace it with your real
+details before final generation. Everything else is ready to use as-is.
+
+
+--- META / SEO ---------------------------------------------------------------
+
+Page title:      Karan Dugad — Web Developer
+Meta description: Karan Dugad is a web developer building fast, considered,
+                   detail-obsessed interfaces. Explore his work.
+Favicon concept:   a small copper "solder dot," matching the icon set in design.md
+
+
+--- NAV ------------------------------------------------------------------
+
+Wordmark (mono):   KD_
+Nav links:         00 ROOT · 01 PROCESS · 02 MODULES · 03 DEPLOYED · 04 UPLINK
+Nav CTA button:     Let's talk
+
+
+--- 00 / BOOT SEQUENCE (preloader) -----------------------------------------
+
+Typed lines, one at a time, ~200-400ms apart, monospace:
+
+> booting karan_dugad.sys
+> loading typography ......... OK
+> mounting components ........ OK
+> compiling interface ........ OK
+> establishing uplink ........ 100%
+> welcome.
+
+[Tap or scroll to skip] — small, muted, appears after ~1.5s in case someone wants
+to skip the sequence.
+
+
+--- 01 / HERO (#root) -------------------------------------------------------
+
+Eyebrow (mono, uppercase):   SYSTEM ONLINE — 01 / ROOT
+
+Headline (Display XL):
+Karan Dugad
+
+Subhead (Display M, directly under headline):
+Web Developer.
+
+Supporting line (Body L):
+I build interfaces that feel as considered as they look — fast, precise,
+and built to hold up under real use.
+
+Primary CTA:     View my work        -> scrolls to #deployed
+Secondary CTA:   Get in touch        -> scrolls to #uplink
+
+Scroll cue (bottom of hero, mono, small):  scroll to boot ↓
+
+
+--- 02 / ABOUT (#process) ---------------------------------------------------
+
+Eyebrow:   02 / PROCESS.LOG
+
+Heading:
+How I work
+
+Body copy:
+[Replace with 2–3 short paragraphs in your own voice. A strong structure:
+ paragraph 1 = who you are and what you build; paragraph 2 = how you work
+ (your process, what you care about — performance, clean code, design
+ collaboration, etc.); paragraph 3 = what you're doing now / open to.]
+
+Example to adapt, not to ship as-is:
+"I'm a web developer who cares as much about how a site feels to use as how
+it's built underneath. My work sits at the intersection of clean, maintainable
+code and interfaces that don't feel like everyone else's.
+
+I like projects where the details matter — the easing on a hover state, the
+weight of a headline, the difference between a page that loads and a page
+that arrives. I try to bring that same attention to the parts nobody sees:
+readable code, sensible structure, and sites that stay fast as they grow.
+
+Right now I'm [open to freelance work / looking for a full-time role /
+building side projects] — [add current focus]."
+
+Quick facts (3–4 short stat/label pairs, mono style):
+[ X+ ]        Years building for the web
+[ XX ]        Projects shipped
+[ Location ]  Based in [City, Country] · working [remote / hybrid / on-site]
+[ Focus ]     Currently focused on [frontend / full-stack / a specific stack]
+
+
+--- 03 / STACK (#modules) ---------------------------------------------------
+
+Eyebrow:   03 / MODULES.SYS
+
+Heading:
+What's mounted on the board
+
+Intro line:
+The tools I reach for most, grouped by what they're for.
+
+Group: Frontend
+  [React, Next.js, Tailwind CSS, TypeScript, Framer Motion — edit to match
+   your actual stack]
+
+Group: Backend
+  [Node.js, Express, PostgreSQL/MongoDB, REST/GraphQL APIs — edit to match]
+
+Group: 3D / Motion
+  [Three.js, React Three Fiber, GSAP — include only if genuinely part of
+   your stack; remove this group if not]
+
+Group: Tools
+  [Git, Figma, Docker, Vercel — edit to match]
+
+Note: keep each group to 4–6 items max — this section is meant to read as a
+board of components at a glance, not an exhaustive resume list.
+
+
+--- 04 / PROJECTS (#deployed) -----------------------------------------------
+
+Eyebrow:   04 / DEPLOYED.APPS
+
+Heading:
+Selected work
+
+Intro line:
+A few things I've built, start to finish.
+
+--- Project slot 1 ---
+[PROJECT NAME]
+One-line description: [what it does and who it's for, in plain language —
+  not "leveraged cutting-edge tech," describe the actual thing]
+Role: [your role — solo build / frontend / full-stack]
+Stack: [e.g. React · Node · PostgreSQL]
+Links: [Live site URL]   [GitHub repo URL]
+Thumbnail: [screenshot or short screen-recording still]
+
+--- Project slot 2 ---
+[PROJECT NAME]
+One-line description: [ ... ]
+Role: [ ... ]
+Stack: [ ... ]
+Links: [Live site URL]   [GitHub repo URL]
+Thumbnail: [ ... ]
+
+--- Project slot 3 ---
+[PROJECT NAME]
+One-line description: [ ... ]
+Role: [ ... ]
+Stack: [ ... ]
+Links: [Live site URL]   [GitHub repo URL]
+Thumbnail: [ ... ]
+
+(Add or remove slots — 3 to 5 featured projects is the right range for a
+single-page site. More than that, link out to a full work page instead of
+cramming them all in here.)
+
+
+--- 05 / EXPERIENCE (#runtime) — optional, include only if you have roles to show ---
+
+Eyebrow:   05 / RUNTIME.LOG
+
+Heading:
+Where I've worked
+
+--- Entry 1 ---
+[Role title] — [Company name]
+[Start — End, e.g. Jan 2023 — Present]
+[One or two lines on what you did/own there]
+
+--- Entry 2 ---
+[Role title] — [Company name]
+[Start — End]
+[One or two lines]
+
+(If you're early-career and this section would feel thin, cut it — fold a
+one-line "currently at X" into the About stats instead, and let Projects
+carry the weight.)
+
+
+--- 06 / CONTACT (#uplink) ---------------------------------------------------
+
+Eyebrow:   06 / UPLINK
+
+Heading:
+Let's build something
+
+Body copy:
+Have a project in mind, or just want to talk shop? My inbox is open.
+
+Primary contact:
+Email: [your@email.com]           (this should be the main, largest CTA)
+Resume: [Download résumé →]        (link to a hosted PDF)
+
+Social links (mono labels, icon + label):
+GitHub     [github.com/yourhandle]
+LinkedIn   [linkedin.com/in/yourhandle]
+Twitter/X  [x.com/yourhandle]
+[Add/remove platforms as relevant]
+
+Availability note (small, mono, optional):
+[STATUS: OPEN TO WORK]  or  [STATUS: BOOKED THROUGH MONTH YEAR]
+
+
+--- FOOTER --------------------------------------------------------------
+
+Left:   © [YEAR] Karan Dugad. Built with React, Tailwind & a bit too much GSAP.
+Right:  [GitHub] · [LinkedIn] · [Email]
+Back to top button: ↑ back to root
+
+
+--- MICRO-COPY (used across the site) ---------------------------------------
+
+404 / empty states (if you ever add routed pages later): "nothing deployed here yet."
+Form success message:      "Message sent. I'll get back to you soon."
+Form error message:        "Something went wrong on my end — try email directly: [email]"
+Loading state (buttons):   "Sending..."
