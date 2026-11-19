@@ -147,12 +147,12 @@ export const contact = {
   eyebrow: '06 / UPLINK',
   heading: "Let's build something",
   body: 'Have a project in mind, or just want to talk shop? My inbox is open.',
-  email:  '[your@email.com]',
+  email:  'karandugad28@gmail.com',
   resume: '/Karan_Dugad_CV.pdf',
   socials: [
-    { label: 'GitHub',    href: 'https://github.com/[yourhandle]'           },
-    { label: 'LinkedIn',  href: 'https://linkedin.com/in/[yourhandle]'      },
-    { label: 'Twitter/X', href: 'https://x.com/[yourhandle]'                },
+    { label: 'GitHub',    href: 'https://github.com/karandugad28'           },
+    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/karan-dugad-a55775437' },
+    { label: 'Instagram', href: 'https://www.instagram.com/karan_dugad/'    },
   ],
   status: '[STATUS: OPEN TO WORK]',
 }
