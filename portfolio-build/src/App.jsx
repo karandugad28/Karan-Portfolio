@@ -8,6 +8,7 @@ import { Projects } from './components/sections/Projects'
 import { Experience } from './components/sections/Experience'
 import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
+import { WhatsAppFloating } from './components/ui/WhatsAppFloating'
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloating />
     </div>
   )
 }

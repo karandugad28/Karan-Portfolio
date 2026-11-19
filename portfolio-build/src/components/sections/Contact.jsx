@@ -137,7 +137,23 @@ export function Contact() {
             >
               ✉ {contact.email} <span style={{ opacity: 0.6 }}>↗</span>
             </a>
-            {contact.socials.map((s) => (
+            <a
+              href={contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pill"
+              style={{
+                background: '#25D366',
+                color: '#FFFFFF',
+                borderColor: 'transparent',
+                padding: '8px 20px',
+                fontSize: '0.86rem',
+                fontWeight: 600,
+              }}
+            >
+              Chat on WhatsApp ↗
+            </a>
+            {contact.socials.filter(s => s.label !== 'WhatsApp').map((s) => (
               <a
                 key={s.label}
                 href={s.href}

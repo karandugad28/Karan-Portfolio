@@ -148,8 +148,11 @@ export const contact = {
   heading: "Let's build something",
   body: 'Have a project in mind, or just want to talk shop? My inbox is open.',
   email:  'karandugad28@gmail.com',
+  phone:  '9054402989',
+  whatsapp: 'https://wa.me/919054402989',
   resume: '/Karan_Dugad_CV.pdf',
   socials: [
+    { label: 'WhatsApp',  href: 'https://wa.me/919054402989'                },
     { label: 'GitHub',    href: 'https://github.com/karandugad28'           },
     { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/karan-dugad-a55775437' },
     { label: 'Instagram', href: 'https://www.instagram.com/karan_dugad/'    },
