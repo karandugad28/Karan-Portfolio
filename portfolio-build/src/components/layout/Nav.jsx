@@ -5,7 +5,6 @@ const NAV_LINKS = [
   { label: 'About',      href: '#process' },
   { label: 'Skills',     href: '#modules' },
   { label: 'Work',       href: '#deployed' },
-  { label: 'Experience', href: '#runtime' },
   { label: 'Contact',    href: '#uplink' },
 ]
 
